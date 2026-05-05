@@ -35,6 +35,12 @@
     .badge-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
     .badge-row a img{height:48px;border-radius:8px}
 
+    /* ── APP PREVIEW GALLERY ── */
+    .app-preview .gallery{overflow-x:auto;padding:12px 0}
+    .app-preview .gallery-track{display:flex;gap:16px}
+    .app-preview figure{min-width:260px;width:260px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.04)}
+    .app-preview img{display:block;width:100%;height:460px;object-fit:cover;background:#071a10}
+
     /* ── FEATURES ── */
     .section{padding:60px 24px;max-width:900px;margin:0 auto}
     .section h2{font-size:1.6rem;font-weight:700;margin-bottom:8px}
@@ -117,6 +123,20 @@
         <div class="icon">🔔</div>
         <h3>Price Alerts</h3>
         <p>Get notified when heating oil prices drop to your target — so you order at the right time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section app-preview" id="preview">
+    <h2>App Preview</h2>
+    <p class="subtitle">Screenshots from the app — tap to enlarge. Place the original screenshots in <strong>assets/previews/</strong> with the filenames shown below.</p>
+    <div class="gallery" aria-hidden="false">
+      <div class="gallery-track">
+        <figure><img src="assets/previews/preview-1.png" alt="App screenshot 1"></figure>
+        <figure><img src="assets/previews/preview-2.png" alt="App screenshot 2"></figure>
+        <figure><img src="assets/previews/preview-3.png" alt="App screenshot 3"></figure>
+        <figure><img src="assets/previews/preview-4.png" alt="App screenshot 4"></figure>
+        <figure><img src="assets/previews/preview-5.png" alt="App screenshot 5"></figure>
       </div>
     </div>
   </section>
