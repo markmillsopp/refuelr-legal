@@ -10,12 +10,16 @@
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.08)}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;gap:8px}
     .logo{font-size:1.4rem;font-weight:700;color:var(--text)}
     .logo span{color:var(--accent)}
-    nav ul{list-style:none;display:flex;gap:24px}
+    nav ul{list-style:none;display:flex;gap:12px;flex-wrap:wrap}
     nav ul li a{color:var(--muted);font-size:0.9rem}
     nav ul li a:hover{color:var(--text);text-decoration:none}
+    @media(max-width:520px){
+      nav{flex-direction:column;align-items:center;text-align:center;padding:14px 16px}
+      nav ul{justify-content:center;gap:6px 14px}
+    }
     .content{max-width:760px;margin:0 auto;padding:48px 24px}
     h1{font-size:2rem;font-weight:800;margin-bottom:6px}
     .date{color:var(--muted);font-size:0.9rem;margin-bottom:36px}
@@ -33,6 +37,7 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="#choices">Privacy Choices</a></li>
+      <li><a href="delete-account.html">Delete Account</a></li>
       <li><a href="terms.html">Terms</a></li>
     </ul>
   </nav>
@@ -80,7 +85,7 @@
     <ul>
       <li>iOS tracking permission: <strong>Settings &gt; Privacy &amp; Security &gt; Tracking</strong>.</li>
       <li>Manage notification permissions in device settings.</li>
-      <li>You can request deletion of your account data by contacting us.</li>
+      <li>You can delete your Refuelr account in the app at <strong>Manage account &gt; Delete account</strong>, or read the full process on the <a href="delete-account.html">account deletion page</a>.</li>
       <li>If available in your region, use platform controls such as Limit Ad Tracking / personalised ads controls.</li>
     </ul>
 
@@ -115,7 +120,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2026 Refuelr &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; <a href="privacy.html#choices">Privacy Choices</a> &nbsp;·&nbsp; <a href="index.html">Home</a></p>
+    <p>&copy; 2026 Refuelr &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; <a href="privacy.html#choices">Privacy Choices</a> &nbsp;·&nbsp; <a href="delete-account.html">Delete Account</a> &nbsp;·&nbsp; <a href="index.html">Home</a></p>
   </footer>
 
 </body>
