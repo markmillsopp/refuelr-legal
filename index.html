@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Refuelr — Find the Cheapest Fuel Near You</title>
-  <meta name="description" content="Refuelr helps drivers in Northern Ireland and Ireland find the cheapest petrol, diesel and home heating oil near them." />
+  <meta name="description" content="Refuelr is made for the UK and the Republic of Ireland: UK fuel prices use official Fuel Finder data plus community coverage, ROI fuel prices rely on community submissions, and home heating oil uses official/community data in Ireland plus community data in the UK." />
   <link rel="icon" type="image/png" href="assets/app_icon.PNG" />
   <link rel="apple-touch-icon" href="assets/app_icon.PNG" />
   <link rel="manifest" href="manifest.json" />
@@ -27,7 +27,8 @@
     /* ── NAV ── */
     nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;gap:8px}
     .logo{display:flex;align-items:center;gap:8px;font-size:1.4rem;font-weight:700;letter-spacing:-0.5px;color:var(--text)}
-    .logo span{color:var(--accent)}
+    .wordmark{display:inline-flex;gap:0;line-height:1}
+    .wordmark-fuelr{color:var(--accent)}
     .logo-img{width:32px;height:32px;border-radius:8px}
     nav ul{list-style:none;display:flex;gap:12px;flex-wrap:wrap}
     nav ul li a{color:var(--muted);font-size:0.85rem}
@@ -91,7 +92,7 @@
   <div id="app-banner" class="app-banner" role="banner"></div>
 
   <nav>
-    <span class="logo"><img class="logo-img" src="assets/app_icon.PNG" alt="" width="32" height="32" />Re<span>fuelr</span></span>
+    <span class="logo"><img class="logo-img" src="assets/app_icon.PNG" alt="" width="32" height="32" /><span class="wordmark">Re<span class="wordmark-fuelr">fuelr</span></span></span>
     <ul>
       <li><a href="#features">Features</a></li>
       <li><a href="#premium">Premium</a></li>
@@ -104,7 +105,7 @@
 
   <section class="hero">
     <h1>Find the <span>cheapest fuel</span><br>near you</h1>
-    <p>Refuelr helps drivers across Northern Ireland and Ireland find the best petrol, diesel, and home heating oil prices — in real time, right from your pocket.</p>
+    <p>Made for the UK and the Republic of Ireland by a Northern Irish developer. UK fuel prices use official UK Government Fuel Finder data, with stations not yet in the scheme covered by community prices; Republic of Ireland fuel prices currently rely on community submissions. Home heating oil uses official and community data across the island of Ireland, and community data across the UK.</p>
     <div class="badge-row">
       <a href="https://apps.apple.com/gb/app/refuelr-fuel-prices-uk-ire/id6765485193" aria-label="Download on the App Store" target="_blank" rel="noopener">
         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
@@ -113,6 +114,20 @@
       <a href="https://play.google.com/store/apps/details?id=com.refuelr" aria-label="Get it on Google Play" target="_blank" rel="noopener">
         <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" />
       </a>
+    </div>
+  </section>
+
+  <section class="section app-preview" id="preview">
+    <h2>App Preview</h2>
+    <p class="subtitle">Tap any screenshot to enlarge.</p>
+    <div class="gallery">
+      <div class="gallery-track">
+        <figure onclick="openLightbox('assets/previews/preview-1.png','Map view')"><img src="assets/previews/preview-1.png" alt="Map view" loading="lazy"></figure>
+        <figure onclick="openLightbox('assets/previews/preview-2.png','Station details')"><img src="assets/previews/preview-2.png" alt="Station details" loading="lazy"></figure>
+        <figure onclick="openLightbox('assets/previews/preview-3.png','Nearby compare')"><img src="assets/previews/preview-3.png" alt="Nearby compare" loading="lazy"></figure>
+        <figure onclick="openLightbox('assets/previews/preview-4.png','Route fuel finder')"><img src="assets/previews/preview-4.png" alt="Route fuel finder" loading="lazy"></figure>
+        <figure onclick="openLightbox('assets/previews/preview-5.png','Route results')"><img src="assets/previews/preview-5.png" alt="Route results" loading="lazy"></figure>
+      </div>
     </div>
   </section>
 
@@ -128,7 +143,7 @@
       <div class="card">
         <div class="icon">🛢️</div>
         <h3>Home Heating Oil</h3>
-        <p>Track and compare heating oil supplier prices across Northern Ireland — updated daily.</p>
+        <p>Track and compare home heating oil prices using official and community data across Northern Ireland and the Republic of Ireland, plus community-submitted prices across the UK.</p>
       </div>
       <div class="card">
         <div class="icon">🗺️</div>
@@ -158,22 +173,10 @@
     <p class="subtitle">
       Official UK fuel data in Refuelr is refreshed every 30 minutes through the UK Government Fuel Finder feed.
       Refuelr now covers 11k+ stations, including 7k+ official stations, with more joining every day.
-      As part of the Fuel Finder scheme, all UK stations are being required to participate, so coverage will keep getting better.
+      UK stations not yet in the Fuel Finder scheme are covered by community-submitted prices until they join.
+      Republic of Ireland fuel prices currently rely on community submissions.
+      Home heating oil uses official and community data across the island of Ireland, and community-submitted data across the UK.
     </p>
-  </section>
-
-  <section class="section app-preview" id="preview">
-    <h2>App Preview</h2>
-    <p class="subtitle">Tap any screenshot to enlarge.</p>
-    <div class="gallery">
-      <div class="gallery-track">
-        <figure onclick="openLightbox('assets/previews/preview-1.png','Map view')"><img src="assets/previews/preview-1.png" alt="Map view" loading="lazy"></figure>
-        <figure onclick="openLightbox('assets/previews/preview-2.png','Station details')"><img src="assets/previews/preview-2.png" alt="Station details" loading="lazy"></figure>
-        <figure onclick="openLightbox('assets/previews/preview-3.png','Nearby compare')"><img src="assets/previews/preview-3.png" alt="Nearby compare" loading="lazy"></figure>
-        <figure onclick="openLightbox('assets/previews/preview-4.png','Route fuel finder')"><img src="assets/previews/preview-4.png" alt="Route fuel finder" loading="lazy"></figure>
-        <figure onclick="openLightbox('assets/previews/preview-5.png','Route results')"><img src="assets/previews/preview-5.png" alt="Route results" loading="lazy"></figure>
-      </div>
-    </div>
   </section>
 
   <!-- LIGHTBOX -->
@@ -198,6 +201,7 @@
   </section>
 
   <footer>
+    <p>Developed by a lonesome developer from Northern Ireland.</p>
     <p>&copy; 2026 Refuelr &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="privacy.html#choices">Privacy Choices</a> &nbsp;·&nbsp; <a href="delete-account.html">Delete Account</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; <a href="mailto:refuelr@outlook.com">Contact</a></p>
   </footer>
 
