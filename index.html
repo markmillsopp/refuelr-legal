@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Refuelr — Find the Cheapest Fuel Near You</title>
   <meta name="description" content="Refuelr helps drivers in Northern Ireland and Ireland find the cheapest petrol, diesel and home heating oil near them." />
+  <link rel="icon" type="image/png" href="assets/app_icon.PNG" />
+  <link rel="apple-touch-icon" href="assets/app_icon.PNG" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0A2E1A" />
+  <meta name="apple-itunes-app" content="app-id=6765485193" />
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     :root{
@@ -21,8 +26,9 @@
 
     /* ── NAV ── */
     nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;gap:8px}
-    .logo{font-size:1.4rem;font-weight:700;letter-spacing:-0.5px;color:var(--text)}
+    .logo{display:flex;align-items:center;gap:8px;font-size:1.4rem;font-weight:700;letter-spacing:-0.5px;color:var(--text)}
     .logo span{color:var(--accent)}
+    .logo-img{width:32px;height:32px;border-radius:8px}
     nav ul{list-style:none;display:flex;gap:12px;flex-wrap:wrap}
     nav ul li a{color:var(--muted);font-size:0.85rem}
     nav ul li a:hover{color:var(--text);text-decoration:none}
@@ -68,6 +74,13 @@
     .premium ul{padding-left:20px;color:var(--muted);margin-top:12px;line-height:2}
     .premium .cta{display:inline-block;margin-top:20px;background:var(--accent);color:var(--bg);font-weight:700;padding:12px 28px;border-radius:8px}
 
+    /* ── APP BANNER ── */
+    .app-banner{display:none;align-items:center;justify-content:center;gap:12px;padding:10px 16px;background:var(--surface);border-bottom:1px solid rgba(255,255,255,0.08);font-size:0.85rem;color:var(--text)}
+    .app-banner.visible{display:flex}
+    .app-banner img{width:28px;height:28px;border-radius:6px;flex-shrink:0}
+    .app-banner .ban-link{color:var(--accent);font-weight:600;white-space:nowrap}
+    .app-banner .ban-close{background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer;line-height:1;padding:0 4px;margin-left:auto}
+
     /* ── FOOTER ── */
     footer{text-align:center;padding:32px 24px;border-top:1px solid rgba(255,255,255,0.08);color:var(--muted);font-size:0.85rem}
     footer a{color:var(--muted)}
@@ -75,8 +88,10 @@
 </head>
 <body>
 
+  <div id="app-banner" class="app-banner" role="banner"></div>
+
   <nav>
-    <span class="logo">Re<span>fuelr</span></span>
+    <span class="logo"><img class="logo-img" src="assets/app_icon.PNG" alt="" width="32" height="32" />Re<span>fuelr</span></span>
     <ul>
       <li><a href="#features">Features</a></li>
       <li><a href="#premium">Premium</a></li>
@@ -91,8 +106,7 @@
     <h1>Find the <span>cheapest fuel</span><br>near you</h1>
     <p>Refuelr helps drivers across Northern Ireland and Ireland find the best petrol, diesel, and home heating oil prices — in real time, right from your pocket.</p>
     <div class="badge-row">
-      <!-- Replace href with your actual App Store link once live -->
-      <a href="https://apps.apple.com/gb/app/refuelr/id0000000000" aria-label="Download on the App Store" target="_blank" rel="noopener">
+      <a href="https://apps.apple.com/gb/app/refuelr-fuel-prices-uk-ire/id6765485193" aria-label="Download on the App Store" target="_blank" rel="noopener">
         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
       </a>
       <!-- Replace href with your actual Google Play link once live -->
@@ -188,6 +202,37 @@
   </footer>
 
   <script>
+    (function(){
+      var ua = navigator.userAgent;
+      var isIOS = /iPhone|iPad|iPod/.test(ua);
+      var isAndroid = /Android/.test(ua);
+      var banner = document.getElementById('app-banner');
+      if (!banner) return;
+      if (localStorage.getItem('app-banner-dismissed')) return;
+      var storeUrl, storeLabel;
+      if (isIOS) {
+        storeUrl = 'https://apps.apple.com/gb/app/refuelr-fuel-prices-uk-ire/id6765485193';
+        storeLabel = 'App Store';
+        storeIcon = 'https://developer.apple.com/favicon.ico';
+      } else if (isAndroid) {
+        storeUrl = 'https://play.google.com/store/apps/details?id=com.refuelr';
+        storeLabel = 'Google Play';
+        storeIcon = 'https://play.google.com/favicon.ico';
+      } else {
+        return;
+      }
+      banner.innerHTML =
+        '<img src="assets/app_icon.PNG" alt="" width="28" height="28" />' +
+        '<span>Get the Refuelr app &mdash; </span>' +
+        '<a class="ban-link" href="' + storeUrl + '" target="_blank" rel="noopener">Open in ' + storeLabel + '</a>' +
+        '<button class="ban-close" aria-label="Dismiss" onclick="dismissBanner()">&#x2715;</button>';
+      banner.classList.add('visible');
+    })();
+    function dismissBanner() {
+      var banner = document.getElementById('app-banner');
+      if (banner) banner.classList.remove('visible');
+      try { localStorage.setItem('app-banner-dismissed', '1'); } catch(e) {}
+    }
     function openLightbox(src, alt) {
       var lb = document.getElementById('lightbox');
       var img = document.getElementById('lightbox-img');
