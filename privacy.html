@@ -52,9 +52,9 @@
 
   <div class="content">
     <h1>Privacy Policy</h1>
-    <p class="date">Effective: 5 May 2026</p>
+    <p class="date">Effective: 16 July 2026</p>
 
-    <p>Refuelr is committed to protecting your privacy. This policy explains what data we collect, how we use it, when data is used for tracking, and your choices.</p>
+    <p>This policy explains what Refuelr accesses, collects, uses, shares, retains, and deletes, when data is used for tracking, and your choices.</p>
 
     <h2>Third-party content and attributions</h2>
     <p>Refuelr contains, shows, or accesses third-party content and services. This includes map data from OpenStreetMap contributors, official fuel price data published under the UK Open Government Licence v3.0, app store payment and subscription systems, and third-party services such as Firebase, RevenueCat, and Google Mobile Ads.</p>
@@ -67,15 +67,20 @@
     <h2>What we collect</h2>
     <ul>
       <li><strong>Name</strong> and <strong>Email Address</strong> for account creation and sign-in.</li>
-      <li><strong>Precise Location</strong> to find nearby stations and support route-based features.</li>
-      <li><strong>Search History</strong> (for example, saved routes and related route metadata) to provide core app features across devices when you are signed in.</li>
+      <li><strong>Approximate and Precise Location</strong> to find nearby stations, identify an area, and support route-based features.</li>
+      <li><strong>Search History</strong> (for example, searched places, postcodes or Eircodes, saved routes, route endpoints, search radius, and related route metadata) to provide core app features across devices when you are signed in.</li>
       <li><strong>User ID</strong> (for example Firebase UID) to operate authentication, data sync, and subscriptions.</li>
       <li><strong>Device ID</strong> (for example advertising identifier and push token) for advertising, analytics, and push delivery.</li>
       <li><strong>Purchase History</strong> (subscription/entitlement status) to enable paid features.</li>
+      <li><strong>Community Contributions</strong> (for example, fuel or heating-oil price, station or supplier, area code, date, confirmations, and reports) to operate community price features and prevent abuse.</li>
       <li><strong>Product Interaction</strong> data to understand feature usage and improve app reliability.</li>
       <li><strong>Advertising Data</strong> (for example ad impressions/clicks and measurement signals) for ad serving and ad performance measurement.</li>
       <li><strong>Crash Data</strong> and <strong>Performance Data</strong> to diagnose and fix technical issues.</li>
     </ul>
+
+    <h2>Location data</h2>
+    <p>Refuelr requests location permission at runtime and accesses location only while the app is open. Refuelr does not request background location.</p>
+    <p>Your approximate or precise coordinates are sent securely to Refuelr&apos;s Firebase Cloud Functions to find nearby stations. When you request a route, route start and destination coordinates are sent to Refuelr&apos;s Firebase Cloud Functions and the configured routing provider. When you ask Refuelr to identify your current area or address, coordinates may be sent to OpenStreetMap Nominatim or another displayed location-search provider. Location is used for these app features, not solely for advertising or analytics.</p>
 
     <h2>How we use your data</h2>
     <p>We use the data above for the following purposes, depending on data type: app functionality, analytics, and (where applicable) third-party advertising. We do not sell personal data to data brokers.</p>
@@ -100,10 +105,12 @@
     <h2>Third-party services</h2>
     <p>Refuelr uses third-party processors that may handle data described in this policy:</p>
     <ul>
-      <li><strong>Firebase (Google)</strong> - authentication, database, cloud functions, messaging, and app analytics/diagnostics.</li>
-      <li><strong>RevenueCat</strong> - subscription management and entitlement tracking.</li>
+      <li><strong>Firebase and Google Cloud</strong> - authentication, app integrity, database, cloud functions, messaging, remote configuration, and app analytics/diagnostics.</li>
+      <li><strong>RevenueCat, Apple, and Google Play</strong> - purchase processing, receipts, subscription status, and entitlement tracking.</li>
       <li><strong>Google Mobile Ads (AdMob)</strong> - ad delivery and ad measurement for non-premium users.</li>
+      <li><strong>OpenStreetMap, Nominatim, Photon, postcodes.io, and the configured routing provider</strong> - maps, place search, reverse geocoding, postcode lookup, and route calculation.</li>
     </ul>
+    <p>Data transmitted by Refuelr is sent using encrypted HTTPS connections. These providers process data under their own privacy terms and our service arrangements.</p>
 
     <h2>Community submissions</h2>
     <p>When you submit fuel or oil price information to Refuelr, that content may be reviewed, stored, and displayed to other users as part of the app experience. We may remove submissions that are inaccurate, abusive, infringing, misleading, or otherwise inconsistent with our terms or legal obligations.</p>
@@ -112,7 +119,11 @@
     <p>Subscriptions are processed by Apple (App Store) or Google (Play Store). Refuelr does not directly collect payment card numbers. Refunds are managed by the relevant app store.</p>
 
     <h2>Data retention</h2>
-    <p>We retain account data while your account is active and for a limited period where needed for legal, fraud-prevention, or operational reasons. You can request account deletion. Diagnostic and operational logs may be retained for a limited period necessary for security and reliability.</p>
+    <p>We retain account-backed data while your account is active. Anti-abuse usage records normally expire within 90 days. Shared route results may remain in an unlinked cache for up to 7 days. Analytics, advertising, diagnostic, and operational records follow the configured retention periods of the relevant providers and may be retained for a limited period necessary for security and reliability.</p>
+
+    <h2>Account and data deletion</h2>
+    <p>You can permanently delete your account inside Refuelr at <strong>Manage account &gt; Delete account</strong>, or follow the instructions on the <a href="delete-account.html">account deletion page</a>. Deletion removes your Firebase account, RevenueCat customer, profile, saved routes, favourites, notification token, alerts, usage records, community contributions, and your user ID from confirmations or reports.</p>
+    <p>Deleting your account does not cancel an active store subscription. Apple or Google Play may retain transaction records where required for billing, fraud prevention, tax, or legal compliance.</p>
 
     <h2>International transfers</h2>
     <p>Some service providers may process data outside your country. Where required, we use appropriate safeguards for international data transfers.</p>

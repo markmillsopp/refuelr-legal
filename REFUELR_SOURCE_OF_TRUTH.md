@@ -1,29 +1,27 @@
-# Refuelr — Source of Truth
+# App sources of truth and shared legal hosting
 
-Purpose
-- The repository `Personal/refuelr` (local path: `/Users/n1603120/Personal/refuelr`) is the single source of truth for the Refuelr app. This repository (`refuelr-legal`) exists only to present the app and host legal/static pages (index and privacy).
+## Repository scope
 
-Scope
-- Use the app repo for authoritative app content: name, description, screenshots, assets, release notes, manifests (package.json, pyproject.toml), and other app metadata.
-- Use this repo only for the public website and legal pages: `index.html` and `privacy.html`.
+`refuelr-legal` hosts Refuelr's production website and public legal pages for Refuelr, Team Master, and Trip Wire. The owner reuses the existing `refuelr.co.uk` domain for these separate apps. Shared hosting does not imply shared data practices, privacy policies, or terms.
 
-Guidelines for contributors and automated agents
-- Always read app information from the app repo first before editing or publishing content here.
-- Do NOT update app metadata in this repo — update it in the source repo and propagate changes.
-- When asked for app details, consult the app repo files (README, manifest files, docs) first.
-- If the app repo is inaccessible, do not guess. Report "source-of-truth unavailable" and ask for access or the correct content.
+Use this repository for public website and legal-page changes. Use each app's own source repository for authoritative functionality, data practices, app metadata, assets, and in-app content.
 
-Paths / Examples
-- App repo (authoritative): `/Users/n1603120/Personal/refuelr`
-- This repo public pages: `index.html`, `privacy.html`
+## App sources and page locations
 
-Agent instructions (automated use)
-- Agents should fetch app-specific text from `/Users/n1603120/Personal/refuelr` (or the configured canonical repo) before using or reproducing app copy.
-- Use this repo only to serve the site pages that reference the app; prefer original text from the app repo for accuracy.
+| App | Authoritative app source | Public pages in this repository |
+| --- | --- | --- |
+| Refuelr | `/Users/markmillsopp/Projects/refuelr` | `index.html`, `privacy.html`, `terms.html`, `delete-account.html` |
+| Team Master | Not yet documented; confirm before changing legal claims | `team-master/`; privacy and support exist, terms still to add |
+| Trip Wire | Not yet documented; confirm before changing legal claims | `trip-wire/` planned; privacy and terms still to add |
 
-Verification
-- To verify app details, open the app repo's `README.md` or the app manifest (e.g., `package.json`) in `/Users/n1603120/Personal/refuelr`.
+See [README.md](README.md) for the current page inventory. Record Team Master and Trip Wire source locations here once verified; do not infer them from Refuelr's source.
 
-Notes
-- Replace owner/maintainer contact details here if desired.
-- If you want this file copied into another location or converted to a different name, tell me where and I will add it.
+## Contributor and agent guidance
+
+- Read the relevant app's source before editing or publishing app-specific claims. Verify data collection, service providers, retention, deletion, and functionality against that app.
+- Do not reuse another app's legal claims merely because its pages share the domain.
+- Update app metadata in its source repository, then propagate relevant public website changes here.
+- Do not edit `/Users/markmillsopp/Projects/refuelr/docs/` for production legal-page changes.
+- Keep Refuelr's in-app legal text under `/Users/markmillsopp/Projects/refuelr/lib/` aligned with its public pages. Keep other apps' in-app legal text and links aligned in their respective sources.
+- If the relevant source is unavailable, report that limitation and obtain the correct source or verified content before drafting app-specific claims.
+- Keep each app's privacy policy and terms clearly labelled and use its own page paths. Do not link to planned pages until they exist.
