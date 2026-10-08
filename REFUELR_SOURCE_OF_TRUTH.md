@@ -11,10 +11,22 @@ Use this repository for public website and legal-page changes. Use each app's ow
 | App | Authoritative app source | Public pages in this repository |
 | --- | --- | --- |
 | Refuelr | `/Users/markmillsopp/Projects/refuelr` | `index.html`, `privacy.html`, `terms.html`, `delete-account.html` |
-| Team Master | Not yet documented; confirm before changing legal claims | `team-master/`; privacy and support exist, terms still to add |
+| Team Master | `/Users/markmillsopp/Projects/team-master` | `team-master/`; privacy and support exist, terms still to add |
 | Trip Wire | Not yet documented; confirm before changing legal claims | `trip-wire/` planned; privacy and terms still to add |
 
-See [README.md](README.md) for the current page inventory. Record Team Master and Trip Wire source locations here once verified; do not infer them from Refuelr's source.
+See [README.md](README.md) for the current page inventory. Record Trip Wire's source location here once verified; do not infer it from another app's source.
+
+## Team Master advertising and privacy source
+
+Verified against `/Users/markmillsopp/Projects/team-master` on 8 October 2026:
+
+- `mobile-app/lib/core/ads/admob_config.dart` enables AdMob banners for the iOS app and excludes web and preview builds.
+- `mobile-app/lib/core/ads/ad_service.dart` checks Google UMP consent before requesting ads, requests iOS tracking authorization separately, and requests non-personalised ads when tracking is not authorized.
+- `mobile-app/lib/shared/widgets/ad_privacy_choices.dart` and `mobile-app/lib/features/more/more_screen.dart` provide **More > Ad privacy choices** when Google UMP requires it.
+- `mobile-app/ios/Runner/Info.plist` explains the tracking request as use of the advertising identifier for relevant ads and ad measurement.
+- `mobile-app/lib/features/legal/legal_screens.dart` contains the in-app privacy policy, including Google AdMob, Google UMP, advertising data, tracking permission, and user choices. Keep the public policy aligned with that copy.
+
+Provider references: [Google Mobile Ads iOS data disclosure](https://developers.google.com/admob/ios/privacy/data-disclosure), [Google UMP consent and privacy options](https://developers.google.com/admob/flutter/privacy), and [Apple tracking permission controls](https://support.apple.com/en-gb/102420).
 
 ## Contributor and agent guidance
 
