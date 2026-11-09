@@ -37,3 +37,15 @@ Provider references: [Google Mobile Ads iOS data disclosure](https://developers.
 - Keep Refuelr's in-app legal text under `/Users/markmillsopp/Projects/refuelr/lib/` aligned with its public pages. Keep other apps' in-app legal text and links aligned in their respective sources.
 - If the relevant source is unavailable, report that limitation and obtain the correct source or verified content before drafting app-specific claims.
 - Keep each app's privacy policy and terms clearly labelled and use its own page paths. Do not link to planned pages until they exist.
+
+## Team Master optional game notifications
+
+Verified against `/Users/markmillsopp/Projects/team-master` on 9 November 2026. Feature contract and independent reviews: `docs/specs/new-game-notifications.md` and `docs/tasks/new-game-notifications/` in that app checkout. This update aligns public documentation with implemented capability; it does not establish deployment or physical delivery.
+
+- `mobile-app/lib/core/notifications/notification_service.dart` maintains secure installation proof, permission/preference status, APNs registration, explicit alert opt-in, versioned account binding and sign-out revocation. Registration records can exist while alerts are off.
+- `cdk-stack/lambda/utils/nodejs/notifications.ts` stores device/account bindings with 90-day expiry and creation jobs with seven-day retention; account cleanup removes linked records.
+- `cdk-stack/lambda/utils/nodejs/notification-delivery.ts` rechecks eligibility and membership. `apns.ts` sends generic content and opaque routing identifiers through Apple.
+- `mobile-app/lib/features/legal/legal_screens.dart` contains the corresponding in-app notification disclosure. Public and in-app policies distinguish registration from alert opt-in.
+- Owner/viewer access uses role-based response projection; viewers do not receive player contact email addresses.
+
+No Refuelr or Trip Wire legal claims were changed for this feature.
