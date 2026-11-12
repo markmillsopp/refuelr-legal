@@ -1,0 +1,17 @@
+# Tasks: Android ads
+- [ ] Review contract.
+  - Acceptance: Fresh review resolves required findings.
+  - Verify: review-spec.md.
+  - Evidence: Pending.
+- [ ] AdMob configuration.
+  - Acceptance: Dedicated Android IDs and UMP message verified.
+  - Verify: Console readback; no production ad interactions.
+  - Evidence: Pending.
+- [ ] Platform advertising code.
+  - Acceptance: Android banners consent gated, correct IDs, no ATT; iOS preserved.
+  - Verify: Meaningful platform and consent tests plus analysis.
+  - Evidence: Pending.
+- [ ] Release readiness and draft replacement.
+  - Acceptance: Independent review, legal consistency, Android test-ad run and signed next-code AAB uploaded with accurate notes.
+  - Verify: Review, signature/fingerprint checks and Play processing.
+  - Evidence: Pending.

@@ -49,3 +49,5 @@ Verified against `/Users/markmillsopp/Projects/team-master` on 9 November 2026. 
 - Owner/viewer access uses role-based response projection; viewers do not receive player contact email addresses.
 
 No Refuelr or Trip Wire legal claims were changed for this feature.
+
+Team Master Android advertising source verified on 12 November 2026: `/Users/markmillsopp/Projects/team-master/mobile-app/lib/core/ads/admob_config.dart` and `ad_service.dart`; Android banners use UMP checks and non-personalised requests, without ATT.
